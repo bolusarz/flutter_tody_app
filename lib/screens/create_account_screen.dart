@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tody_app/screens/login_screen.dart';
 import 'package:tody_app/theme/colors.dart';
 import 'package:tody_app/theme/text_styles.dart';
 import 'package:tody_app/widgets/ui/social_button.dart';
@@ -9,6 +10,7 @@ class CreateAccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(context);
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: const Color.fromRGBO(0, 0, 0, 0),
@@ -40,7 +42,14 @@ class CreateAccountScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
                   icon: const Icon(Icons.mail),
                   label: const Text("Continue with email"),
                 ),
