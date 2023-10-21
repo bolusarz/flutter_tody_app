@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tody_app/theme/button_theme.dart';
+import 'package:tody_app/theme/colors.dart';
+import 'package:tody_app/theme/text_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,24 +16,38 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          fontFamily: 'SF Pro Display',
+          primaryColor: primaryColor,
+          primaryColorDark: const Color.fromRGBO(9, 108, 104, 1),
+          backgroundColor: bgColor,
+          errorColor: errorColor,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: primaryColor,
+          ),
+          useMaterial3: true,
+          textTheme: const TextTheme(
+            headlineLarge: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+            titleLarge: twentyEightPxTitleBold,
+            titleMedium: twentySixPxTitleBold,
+            titleSmall: twentyFourPxTitleBold,
+            displayLarge: twentyFourPxTitleSemiBold,
+            displayMedium: eighteenPxTitleSemiBold,
+            displaySmall: sixteenPxTitleSemiBold,
+            bodyLarge: eighteenPxTitleMedium,
+            bodyMedium: sixteenPxTitleNormal,
+            bodySmall: fourteenPxTitleNormal,
+          ),
+          cardTheme: CardTheme(
+            elevation: 40,
+            shadowColor: const Color.fromARGB(20, 15, 22, 58),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
+            ),
+          ),
+          outlinedButtonTheme:
+              OutlinedButtonThemeData(style: outlineNormalButtonStyle),
+          elevatedButtonTheme:
+              ElevatedButtonThemeData(style: elevatedNormalButtonStyle)),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
