@@ -9,6 +9,7 @@ final ButtonStyle elevatedSmallButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.white,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
@@ -21,7 +22,9 @@ final ButtonStyle elevatedNormalButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.white,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
+  elevation: 0.0,
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
 );
@@ -33,6 +36,7 @@ final ButtonStyle elevatedLargeButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.white,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
@@ -45,6 +49,7 @@ final ButtonStyle elevatedSmallButton2Style = ElevatedButton.styleFrom(
   foregroundColor: primaryColor,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
@@ -57,6 +62,7 @@ final ButtonStyle elevatedNormalButton2Style = ElevatedButton.styleFrom(
   foregroundColor: primaryColor,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
@@ -69,6 +75,7 @@ final ButtonStyle elevatedLargeButton2Style = ElevatedButton.styleFrom(
   foregroundColor: primaryColor,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(16),
+    side: BorderSide.none,
   ),
   disabledBackgroundColor: bgColor,
   disabledForegroundColor: Colors.white,
