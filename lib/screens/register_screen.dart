@@ -1,27 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:tody_app/screens/register_screen.dart';
 import 'package:tody_app/theme/button_theme.dart';
 import 'package:tody_app/theme/colors.dart';
 import 'package:tody_app/theme/text_styles.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginState();
+  State<StatefulWidget> createState() => _RegisterScreenState();
 }
 
-class _LoginState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  void submitForm() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const RegisterScreen(),
-      ),
-    );
-  }
+  bool isPwdVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +26,7 @@ class _LoginState extends State<LoginScreen> {
             height: 40,
           ),
           Text(
-            "Welcome Back!",
+            "Create account",
             textAlign: TextAlign.center,
             style: twentyFourPxTitleSemiBold.merge(
               const TextStyle(
@@ -46,7 +38,7 @@ class _LoginState extends State<LoginScreen> {
             height: 8,
           ),
           Text(
-            "Your work faster and structured with Todyapp",
+            "Create your account and feel the benefits",
             style: fourteenPxTitleNormal.merge(
               const TextStyle(
                 color: Color.fromRGBO(118, 126, 140, 1),
@@ -68,7 +60,7 @@ class _LoginState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Email Address",
+                          "Username",
                           style: sixteenPxTitleMedium
                               .merge(const TextStyle(color: primaryNeutral)),
                         ),
@@ -76,6 +68,38 @@ class _LoginState extends State<LoginScreen> {
                           height: 12,
                         ),
                         TextFormField(),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Password",
+                          style: sixteenPxTitleMedium
+                              .merge(const TextStyle(color: primaryNeutral)),
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        TextFormField(
+                          obscureText: !isPwdVisible,
+                          style: sixteenPxTitleNormal,
+                          decoration: InputDecoration(
+                            suffix: IconButton(
+                              onPressed: () => setState(
+                                () {
+                                  isPwdVisible = !isPwdVisible;
+                                },
+                              ),
+                              icon: Icon(isPwdVisible
+                                  ? Icons.visibility_off
+                                  : Icons.visibility),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -86,7 +110,7 @@ class _LoginState extends State<LoginScreen> {
           Container(
             margin: const EdgeInsets.all(24),
             child: ElevatedButton(
-              onPressed: submitForm,
+              onPressed: () {},
               style: elevatedLargeButtonStyle,
               child: const Text("Next"),
             ),

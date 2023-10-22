@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tody_app/screens/create_account_screen.dart';
 import 'package:tody_app/theme/button_theme.dart';
 import 'package:tody_app/theme/colors.dart';
+import 'package:tody_app/theme/input_theme.dart';
 import 'package:tody_app/theme/text_styles.dart';
 
 void main() {
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
             OutlinedButtonThemeData(style: outlineNormalButtonStyle),
         elevatedButtonTheme:
             ElevatedButtonThemeData(style: elevatedNormalButtonStyle),
+        inputDecorationTheme: outlineInputStyle,
       ),
       home: const CreateAccountScreen(),
     );
